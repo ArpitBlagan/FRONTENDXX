@@ -57,8 +57,9 @@ const Signup = () => {
                                     e.preventDefault();
                                     if(email,pass,first,last){
                                         try{
+                                            const name=first+last;
                                             const val={
-                                                name:`${first} ${last}`,
+                                                name:name,
                                                 email,
                                                 password:pass
                                             }

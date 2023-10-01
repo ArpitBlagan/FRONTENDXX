@@ -17,10 +17,10 @@ const Main = () => {
     const check=async()=>{
         try{
         const data=await axios.get('https://xeroo.onrender.com/api/v1/check',{withCredentials:true});
-        const val=data.data.message;console.log(data,val);
-        if(val=='not authorized'){
+        const vall=data.data.message;console.log(vall,data.data.name);
+        if(vall=='not authorized'){
             navigate("/");
-        }else{setV(data.data.user)}
+        }else{setV(data.data)}
     }catch(err){
             console.log(err);
         }
@@ -61,7 +61,7 @@ const Main = () => {
             </div>
         </div>
         <div>
-            <Secc name={val?.name}/>
+            <Secc name={val.name} />
         </div>
     </div>
   )
